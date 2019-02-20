@@ -101,13 +101,13 @@ public class HandGestureRecognizer extends JPanel {
     }
 
     public Mat filterColorHsv(int h, int s, int v, int h1, int s1, int v1, Mat immagine) {
-        Mat modifica = new Mat();
+        Mat mod = new Mat();
         if (immagine != null) {
-            Core.inRange(immagine, new Scalar(h, s, v), new Scalar(h1, s1, v1), modifica);
+            Core.inRange(immagine, new Scalar(h, s, v), new Scalar(h1, s1, v1), mod);
         } else {
             System.out.println("Error with image!");
         }
-        return modifica;
+        return mod;
     }
 
     public Mat detectSkin(Mat orig) {
